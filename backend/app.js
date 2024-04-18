@@ -25,7 +25,10 @@ app.get("/", (req, res) => {
 });
 // Connect to Database
 connectDB();
-const PORT = process.env.APP_PORT;
+const PORT = process.env.PORT || process.env.APP_PORT;
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static('frontend/build'))
+}
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
 
 if (!fs.existsSync('./assets')) {
