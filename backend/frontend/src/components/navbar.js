@@ -144,7 +144,7 @@ const Navbar = () => {
                   Update Profile
                 </MenuItem>
                 <MenuItem onClick={handleChangePassword}>
-                  Change Password
+                  Change Password 
                 </MenuItem>
                 {role === "farmer" && (
                   <>
