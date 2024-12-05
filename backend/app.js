@@ -25,7 +25,7 @@ app.get("/", (req, res) => {
 });
 // Connect to Database
 connectDB();
-const PORT = process.env.PORT || process.env.APP_PORT;
+const PORT = process.env.PORT || process.env.APP_PORT || 5000;
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static('frontend/build'))
 }
