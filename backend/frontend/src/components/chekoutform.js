@@ -38,7 +38,7 @@ const CheckoutForm = () => {
 
       try {
         const result = await axios.post(
-          "http://localhost:5000/api/createOrder",
+          "https://gather-gro.onrender.com/api/createOrder",
           orderData
         );
         if (result.data.status) {
@@ -66,7 +66,10 @@ const CheckoutForm = () => {
       products: cartItems
     }
 
-    const response = await axios.post("http://localhost:5000/api/createCheckout", body);
+    const response = await axios.post(
+      "https://gather-gro.onrender.com/api/createCheckout",
+      body
+    );
 
     const result = stripe.redirectToCheckout({
       sessionId: response.data.id

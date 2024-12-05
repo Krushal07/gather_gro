@@ -27,14 +27,18 @@ const UpdateProduct = () => {
     const [categories, setCategories] = useState([]);
 
     const getCategories = async () => {
-        const result = await axios.get("http://localhost:5000/api/listCategory");
+        const result = await axios.get(
+          "https://gather-gro.onrender.com/api/listCategory"
+        );
         if (result.data.status) {
             setCategories(result.data.response);
         }
     };
 
     const getProductDetails = async () => {
-        const result = await axios.get(`http://localhost:5000/api/getProductDetailById?productId=${id}`)
+        const result = await axios.get(
+          `https://gather-gro.onrender.com/api/getProductDetailById?productId=${id}`
+        );
         if (result.data.status) {
             const responseData = result.data.response;
             setProductName(responseData.productName);
@@ -72,7 +76,7 @@ const UpdateProduct = () => {
         formData.append("available", true);
         // console.log(formData);
         const result = await axios.post(
-            "http://localhost:5000/api/createProduct",
+            "https://gather-gro.onrender.com/api/createProduct",
             formData,
             {
                 headers: { "Content-Type": "multipart/form-data" },

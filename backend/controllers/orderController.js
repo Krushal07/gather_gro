@@ -190,7 +190,7 @@ const createCheckout = async (req, res) => {
           metadata: {
             id: product.id
           }
-          // images: [`http://localhost:5000/product_images/${product.image}`]
+          // images: [`https://gather-gro.onrender.com/product_images/${product.image}`]
         },
         unit_amount: product.price * 100,
       },

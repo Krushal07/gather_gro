@@ -40,46 +40,54 @@ const ItemCard = ({ product }) => {
     }
 
     return (
-        <Card
-            sx={{
-                maxWidth: 320,
-                minWidth: 240,
-                // minHeight: 450,
-                margin: 2,
-                // borderRadius: "15px",
-                cursor: "pointer",
-            }}
+      <Card
+        sx={{
+          maxWidth: 320,
+          minWidth: 240,
+          // minHeight: 450,
+          margin: 2,
+          // borderRadius: "15px",
+          cursor: "pointer",
+        }}
         // onClick={() =>
         //     navigate(`/product/${product._id}`, { state: { product } })
         // }
-        >
-            <CardMedia
-                component="img"
-                height="250"
-                image={`http://localhost:5000/product_images/${product.productImages}`}
-                alt={product.productName}
-                onClick={() =>
-                    navigate(`/product/${product._id}`, { state: { product } })
-                }
-            />
-            <CardContent>
-                <Typography variant="h6" component="div">
-                    {product.productName}
-                </Typography>
-                <Typography variant="body2" color="textSecondary">
-                    ${product.price}
-                </Typography>
-                {product.quantity < 10 && <Typography variant="body2" color="red">Only few left!</Typography>}
-            </CardContent>
-            <CardActions style={{ justifyContent: "space-around", margin: '10px' }}>
-                <CustomButton size="medium" variant="contained" onClick={addItemHandler} >
-                    Add to cart
-                </CustomButton>
-                <CustomButton size="medium" variant="contained">
-                    Buy Now
-                </CustomButton>
-            </CardActions>
-        </Card>
-    )
+      >
+        <CardMedia
+          component="img"
+          height="250"
+          image={`https://gather-gro.onrender.com/product_images/${product.productImages}`}
+          alt={product.productName}
+          onClick={() =>
+            navigate(`/product/${product._id}`, { state: { product } })
+          }
+        />
+        <CardContent>
+          <Typography variant="h6" component="div">
+            {product.productName}
+          </Typography>
+          <Typography variant="body2" color="textSecondary">
+            ${product.price}
+          </Typography>
+          {product.quantity < 10 && (
+            <Typography variant="body2" color="red">
+              Only few left!
+            </Typography>
+          )}
+        </CardContent>
+        <CardActions style={{ justifyContent: "space-around", margin: "10px" }}>
+          <CustomButton
+            size="medium"
+            variant="contained"
+            onClick={addItemHandler}
+          >
+            Add to cart
+          </CustomButton>
+          <CustomButton size="medium" variant="contained">
+            Buy Now
+          </CustomButton>
+        </CardActions>
+      </Card>
+    );
 };
 export default ItemCard;

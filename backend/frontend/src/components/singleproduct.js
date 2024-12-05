@@ -57,7 +57,7 @@ function SingleProduct() {
               objectFit: "contain",
               borderRadius: 2,
             }}
-            src={`http://localhost:5000/product_images/${product.productImages}`}
+            src={`https://gather-gro.onrender.com/product_images/${product.productImages}`}
             alt={product.productName}
           />
         </Grid>
@@ -82,7 +82,9 @@ function SingleProduct() {
           <Typography variant="h6" color="text.secondary" sx={{ mb: 2 }}>
             Sold and shiped by: {product.vendorId.username}
           </Typography>
-          <Box sx={{ mt: 4, display: "flex", justifyContent: "center", gap: 2 }}>
+          <Box
+            sx={{ mt: 4, display: "flex", justifyContent: "center", gap: 2 }}
+          >
             <Button
               variant="contained"
               color="primary"
@@ -91,14 +93,16 @@ function SingleProduct() {
             >
               Add to Cart
             </Button>
-            <Button variant="outlined" color="primary" startIcon={<PaymentIcon />}>
+            <Button
+              variant="outlined"
+              color="primary"
+              startIcon={<PaymentIcon />}
+            >
               Buy Now
             </Button>
           </Box>
         </Grid>
       </Grid>
-
-
     </Box>
   );
 }

@@ -63,14 +63,18 @@ function Home() {
 
   useEffect(() => {
     const fetchProducts = async () => {
-      const result = await axios.get("http://localhost:5000/api/listProducts");
+      const result = await axios.get(
+        "https://gather-gro.onrender.com/api/listProducts"
+      );
       if (result.data.status) {
         setProductList(result.data.response);
         setFilteredProducts(result.data.response);
       }
     };
     const fetchCategories = async () => {
-      const result = await axios.get("http://localhost:5000/api/listCategory");
+      const result = await axios.get(
+        "https://gather-gro.onrender.com/api/listCategory"
+      );
       if (result.data.status) {
         setCategories(result.data.response);
       }
@@ -228,7 +232,7 @@ function Home() {
                   <CardMedia
                     component="img"
                     height="250"
-                    image={`http://localhost:5000/product_images/${product.productImages}`}
+                    image={`https://gather-gro.onrender.com/product_images/${product.productImages}`}
                     alt={product.productName}
                   />
                   <CardContent>

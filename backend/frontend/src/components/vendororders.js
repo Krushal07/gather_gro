@@ -27,7 +27,7 @@ const VendorOrders = () => {
   useEffect(() => {
     const fetchOrders = async () => {
       const result = await axios.get(
-          `http://localhost:5000/api/ordersByVendor?vendorId=${vendorId}`
+        `https://gather-gro.onrender.com/api/ordersByVendor?vendorId=${vendorId}`
       );
       if (result.data.status) {
         setOrders(result.data.response);
@@ -50,10 +50,13 @@ const VendorOrders = () => {
   const saveStatusUpdate = async (orderId, newStatus) => {
     // Call API to save the status update
     try {
-      await axios.post(`http://localhost:5000/api/updateOrderStatus`, {
-        orderId,
-        newStatus,
-      });
+      await axios.post(
+        `https://gather-gro.onrender.com/api/updateOrderStatus`,
+        {
+          orderId,
+          newStatus,
+        }
+      );
       alert("Order status updated successfully");
     } catch (error) {
       alert("Failed to update order status");
@@ -120,7 +123,7 @@ const VendorOrders = () => {
                         <TableCell>{item.productName}</TableCell>
                         <TableCell>
                           <img
-                            src={`http://localhost:5000/product_images/${item.image}`}
+                            src={`https://gather-gro.onrender.com/product_images/${item.image}`}
                             width={50}
                             height={50}
                             alt={item.productName}

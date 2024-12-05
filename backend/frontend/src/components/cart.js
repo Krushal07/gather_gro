@@ -80,7 +80,7 @@ const Cart = () => {
             <Card key={product.id} sx={{ display: "flex", margin: "15px" }}>
               <CardMedia
                 component="img"
-                image={`http://localhost:5000/product_images/${product.image}`}
+                image={`https://gather-gro.onrender.com/product_images/${product.image}`}
                 sx={{ width: 150, height: 150 }}
                 alt="product image"
               />
